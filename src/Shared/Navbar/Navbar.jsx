@@ -1,4 +1,3 @@
-
 import {
   Navbar,
   MobileNav,
@@ -6,11 +5,13 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const Nav = () => {
   const [openNav, setOpenNav] = useState(false);
+  const { user , logOut } = useContext(AuthContext);
 
   useEffect(() => {
     window.addEventListener(
@@ -67,35 +68,68 @@ const Nav = () => {
     </ul>
   );
 
+  const handleLogOut = () => {
+    logOut()
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
   return (
     <div className="mx-auto">
-      <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-8 py-2 lg:px-12 lg:py-4">
+      <Navbar className="sticky top-0 z-10 h-max max-w-full shadow-none rounded-none px-8 py-2 lg:px-8 lg:py-5 lg:max-w-[1440px] lg:mx-auto">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography className="mr-4 cursor-pointer py-1.5 font-medium">
-            Material Tailwind
+          <Typography className="mr-4 cursor-pointer font-semibold py-1.5">
+            Decor Art
           </Typography>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
-            <div className="flex items-center gap-x-1">
-              <Link to={"/login"} className="hidden lg:inline-block">
-                <Button
-                  className="border-2 hover:bg-[#343434] border-[#343434] hover:text-white"
-                  variant="text"
-                  size="sm"
-                >
-                  Log In
-                </Button>
-              </Link>
+            <div className="">
+              {user ? (
+                <div className="">
+                  
+                  <div className="dropdown dropdown-hover">
+                    <div tabIndex={0} role="button" className=" m-1">
+                      <img
+                        className="w-[45px] rounded-full hidden lg:flex"
+                        src={user?.photoURL}
+                        alt=""
+                      />
+                      </div>
+                    <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                      <h1 className="m-1 shadow-sm p-1 font-semibold">{user?.displayName}</h1>
+                      <h1 className="m-1 shadow-sm p-1 font-semibold">{user?.email}</h1>
+                      <Button onClick={handleLogOut} className="my-2 w-full">Log Out</Button>
+                    </div>
+                  </div>
+                  
+                </div>
+              ) : (
+                <div className="flex items-center gap-x-1">
+                  <Link to={"/login"} className="hidden lg:inline-block">
+                    <Button
+                      className="border-2 hover:bg-[#343434] border-[#343434] hover:text-white"
+                      variant="text"
+                      size="sm"
+                    >
+                      Log In
+                    </Button>
+                  </Link>
 
-              <Link to={"/register"} className="hidden lg:inline-block">
-                <Button
-                  className="hover:bg-none border-2 border-[#343434] hover:shadow-none hover:text-gray-800"
-                  variant="gradient"
-                  size="sm"
-                >
-                  Register
-                </Button>
-              </Link>
+                  <Link to={"/register"} className="hidden lg:inline-block">
+                    <Button
+                      className="hover:bg-none border-2 border-[#343434] hover:shadow-none hover:text-gray-800"
+                      variant="gradient"
+                      size="sm"
+                    >
+                      Register
+                    </Button>
+                  </Link>
+                </div>
+              )}
             </div>
             <IconButton
               variant="text"
@@ -137,28 +171,44 @@ const Nav = () => {
           </div>
         </div>
         <MobileNav open={openNav}>
-          {navList}
+          
           <div className="flex items-center gap-x-1">
-            <Link to={"/login"} className="">
-              <Button
-                className="border hover:bg-[#343434] border-[#343434] hover:text-white"
-                variant="text"
-                size="sm"
-              >
-                Log In
-              </Button>
-            </Link>
+            <div className="">
+              {user ? (
+                <div className="">
+                  <img
+                    className="w-[45px] rounded-full "
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                </div>
+              ) : (
+                <div className="flex items-center gap-x-1">
+                  <Link to={"/login"} className="">
+                    <Button
+                      className="border-2 hover:bg-[#343434] border-[#343434] hover:text-white"
+                      variant="text"
+                      size="sm"
+                    >
+                      Log In
+                    </Button>
+                  </Link>
 
-            <Link to={"/register"} className="">
-              <Button
-                className="hover:bg-none border border-[#343434] hover:shadow-none hover:text-gray-800"
-                variant="gradient"
-                size="sm"
-              >
-                Register
-              </Button>
-            </Link>
+                  <Link to={"/register"} className="">
+                    <Button
+                      className="hover:bg-none border-2 border-[#343434] hover:shadow-none hover:text-gray-800"
+                      variant="gradient"
+                      size="sm"
+                    >
+                      Register
+                    </Button>
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
+
+          {navList}
         </MobileNav>
       </Navbar>
     </div>

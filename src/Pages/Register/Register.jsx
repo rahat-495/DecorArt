@@ -8,9 +8,74 @@ import {
   Input,
   Checkbox,
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { AuthContext } from "../../Auth/AuthProvider";
+import 'react-toastify/dist/ReactToastify.css';
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 const Register = () => {
+
+  const {createUser , setProfile} = useContext(AuthContext) ;
+  
+  const navigate = useNavigate() ;
+  const [remember , setRemember] = useState(false) ;
+  const [errorText , setErrorText] = useState('') ;
+  const [passInt , setPassInt] = useState('') ;
+  const [eye , setEye] = useState(false) ;
+
+  const handleSubmit = (e) => {
+    e.preventDefault() ;
+    
+    const form = e.target ;
+    const name = form.name.value ;
+    const photo = form.photo.value ;
+    const email = form.email.value ;
+    const pass = form.password.value ;
+
+    
+    if(remember){
+      if(passInt.length >= 6){
+        if(/[a-z]/.test(passInt) && /[A-Z]/.test(passInt)){
+          createUser(email , pass)
+          .then((result) => {
+            console.log(result.user);
+            toast.success('Register Success Fully !') ;
+            form.reset() ;
+            setTimeout(() => {
+              navigate('/')
+            }, 1000);
+            setProfile(name , photo)
+            .then((result) => {
+              console.log(result);
+            })
+            .catch((error) => {
+              console.log(error);
+            })
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+        }
+        else{
+          toast.error("Your Password Have UpperCase or LowerCase Charecter's !") ;
+        }
+      }
+      else{
+        toast.error("Your Password must have 6 Charecter's !") ;
+      }
+    }
+    else{
+      setErrorText('Please Accept Our Turms & Condition !') ;
+    }
+
+  }
+
+  const handleChange = (e) => {
+    setPassInt(e.target.value) ;
+  }
+
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center`}>
       <Card className="w-96 pt-11 shadow-none border">
@@ -25,13 +90,34 @@ const Register = () => {
         </CardHeader>
 
         <CardBody className="flex flex-col gap-4">
-          <form className="flex flex-col gap-4">
-            <Input required name="name" label="Name" size="lg" />
-            <Input required name="photo" label="Photo-URL" size="lg" />
-            <Input required name="email" label="Email" size="lg" />
-            <Input required name="Pass" label="Password" size="lg" />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <Input required type="text" name="name" label="Name" size="lg" />
+            <Input required type="text" name="photo" label="Photo-URL" size="lg" />
+            <Input required type="email" name="email" label="Email" size="lg" />
+            <div className="relative">
+              {
+                eye ? 
+                <IoMdEyeOff onClick={() => setEye(!eye)} className="cursor-pointer text-2xl absolute z-10 top-[10px] right-2"/> :
+                <IoMdEye onClick={() => setEye(!eye)} className="cursor-pointer text-2xl absolute z-10 top-[10px] right-2"/>  
+              }
+              <Input 
+              className="z-0"
+              onChange={handleChange} 
+              type={eye ? 'text' : 'password'} 
+              name="password" 
+              label="Password" 
+              size="lg" 
+              required />
+            </div>
             <div className="-ml-2.5">
-              <Checkbox label="Remember Me" />
+              <Checkbox onClick={() => setRemember(!remember)} label="Turms & Condition" />
+            </div>
+            <div>
+              {
+                remember ? 
+                <p></p> :
+                <p className="text-red-800 font-semibold">{errorText}</p>
+              }
             </div>
             <input
               type="submit"
@@ -44,18 +130,26 @@ const Register = () => {
         <CardFooter className="pt-0">
           <Typography variant="small" className="mt-6 flex justify-center">
             Already have an account?
-            <Link to={"/login"}>
-              <Typography
-                variant="small"
-                color="blue-gray"
-                className="ml-1 font-bold"
-              >
-                Login
-              </Typography>
+            <Link className="text-blue-gray-900 font-bold mx-1 hover:underline" to={"/login"}>
+              Login
             </Link>
           </Typography>
         </CardFooter>
       </Card>
+      
+      <ToastContainer
+      position="top-center"
+      autoClose={800}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+      />
+
     </div>
   );
 };
