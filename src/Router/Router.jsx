@@ -5,6 +5,13 @@ import Error from "../Error/Error";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import AddCraft from "../Pages/AddCraft/AddCraft";
+import AddCraftP from "../Private/AddCraftP";
+import CardsDetail from "../Pages/CardsDetail/CardsDetail";
+import CardsDetailP from "../Private/CardsDetailP";
+import SubCategories from "../Pages/SubCategories/SubCategories";
+import AllArt from "../Pages/AllArt&Craft/AllArt";
+import MyLIst from "../Pages/MyList/MyLIst";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +21,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home></Home> ,
+        loader : () => fetch(`http://localhost:5555/addCraftItem`) ,
       },
       {
         path : '/login' ,
@@ -23,6 +31,28 @@ const router = createBrowserRouter([
       {
         path : '/register' ,
         element : <Register></Register> ,
+      },
+      {
+        path : '/addCraftItem' ,
+        element : <AddCraftP><AddCraft></AddCraft></AddCraftP>
+      },
+      {
+        path : '/cardsDetails/:id' ,
+        element : <CardsDetailP><CardsDetail></CardsDetail></CardsDetailP> ,
+        loader : ({params}) => fetch(`http://localhost:5555/addCraftItem/${params.id}`)
+      },
+      {
+        path : '/subCategorie/:id' ,
+        element : <SubCategories></SubCategories> ,
+      },
+      {
+        path : '/allArt' ,
+        element : <AllArt></AllArt> ,
+        loader : () => fetch(`http://localhost:5555/addCraftItem`) ,
+      },
+      {
+        path : '/myList' ,
+        element : <MyLIst></MyLIst> ,
       }
     ],
   },

@@ -5,13 +5,13 @@ import { Button } from "@material-tailwind/react";
 
 const Banner = () => {
   return (
-    <div className='flex flex-col gap-5 items-start my-20 px-8 justify-between lg:items-center overflow-hidden lg:flex-row lg:max-w-[1440px] lg:mx-auto'>
+    <div className='flex flex-col gap-5 items-start my-20 px-8 justify-between lg:items-center overflow-hidden lg:flex-row '>
 
       <div className="flex-1 w-2/4 gap-3 flex flex-col md:gap-3 lg:gap-10">
         <h1 data-aos="fade-right" data-aos-duration="700" className='mon font-medium'>FEATURED AIM</h1>
         <p data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" className="text-2xl leading-[40px] w-auto md:text-4xl md:leading-[55px] lg:w-[450px] lg:text-5xl lg:leading-[68px] mon">Discover Our Skilled Team Crafting Stunning Decor Art Pieces</p>
         <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
-          <Button className='mon w-fit btn border hover:border-[#BD9A68] hover:text-[#BD9A68] hover:bg-transparent bg-[#BD9A68] text-white'>Explore All</Button>
+          <Button className='mon w-fit btn border hover:text-gray-900 hover:bg-transparent  text-white'>Explore All</Button>
         </div>
       </div>
 

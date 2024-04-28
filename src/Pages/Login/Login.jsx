@@ -10,7 +10,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useContext, useState } from "react";
@@ -21,6 +21,7 @@ const Login = () => {
 
   const {signIn , googleLogin , githubLogin } = useContext(AuthContext) ;
 
+  const location = useLocation() ;
   const navigate = useNavigate() ;
   const [eye , setEye] = useState(false) ;
   const [remember , setRemember] = useState(false) ;
@@ -40,7 +41,12 @@ const Login = () => {
         form.reset() ;
         toast.success('Login Success Fully !') ;
         setTimeout(() => {
-          navigate('/') ;
+          if(location.state){
+            navigate(location.state) ;
+          }
+          else{
+            navigate('/') ;
+          }
         }, 1000);
       })
       .catch((error) => {
@@ -61,7 +67,12 @@ const Login = () => {
       console.log(result.user);
       toast.success('Login Success Fully !') ;
       setTimeout(() => {
-        navigate('/') ;
+        if(location.state){
+          navigate(location.state) ;
+        }
+        else{
+          navigate('/') ;
+        }
       }, 1000);
     })
     .catch((error) => {
@@ -75,7 +86,12 @@ const Login = () => {
       console.log(result);
       toast.success('Login Success Fully !') ;
       setTimeout(() => {
-        navigate('/') ;
+        if(location.state){
+          navigate(location.state) ;
+        }
+        else{
+          navigate('/') ;
+        }
       }, 1000);
     })
     .catch((error) => {

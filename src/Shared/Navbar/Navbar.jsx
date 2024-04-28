@@ -26,9 +26,11 @@ const Nav = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className={`p-1 font-normal font-gro`}
+        className={`p-1 font-normal gro text-md`}
       >
-        <NavLink to={"/"} className="flex items-center">
+        <NavLink to={"/"} className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "font-bold" : ""
+        }>
           Home
         </NavLink>
       </Typography>
@@ -37,9 +39,11 @@ const Nav = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal gro"
+        className="p-1 font-normal gro text-md"
       >
-        <NavLink to={"/allArt"} href="#" className="flex items-center">
+        <NavLink to={"/allArt"} href="#" className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "font-bold" : ""
+        }>
           All Art & craft Items
         </NavLink>
       </Typography>
@@ -48,9 +52,11 @@ const Nav = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal gro"
+        className="p-1 font-normal gro text-md"
       >
-        <NavLink to={"/addItem"} className="flex items-center">
+        <NavLink to={"/addCraftItem"} className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "font-bold" : ""
+        }>
           Add Craft Item
         </NavLink>
       </Typography>
@@ -59,9 +65,11 @@ const Nav = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal gro"
+        className="p-1 font-normal gro text-md"
       >
-        <NavLink to={"/myList"} className="flex items-center">
+        <NavLink to={"/myList"} className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "font-bold" : ""
+        }>
           My Art&Craft List
         </NavLink>
       </Typography>
@@ -82,7 +90,7 @@ const Nav = () => {
     <div className="mx-auto">
       <Navbar className="sticky top-0 z-10 h-max max-w-full shadow-none rounded-none px-8 py-2 lg:px-8 lg:py-5 lg:max-w-[1440px] lg:mx-auto">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography className="mr-4 cursor-pointer font-semibold py-1.5">
+          <Typography className="mr-4 text-2xl cursor-pointer font-semibold py-1.5">
             Decor Art
           </Typography>
           <div className="flex items-center gap-4">
@@ -100,8 +108,8 @@ const Nav = () => {
                       />
                       </div>
                     <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                      <h1 className="m-1 shadow-sm p-1 font-semibold">{user?.displayName}</h1>
-                      <h1 className="m-1 shadow-sm p-1 font-semibold">{user?.email}</h1>
+                      <h1 className="m-1 shadow-sm p-1 rounded-md font-semibold">{user?.displayName}</h1>
+                      <h1 className="m-1 shadow-sm p-1 rounded-md font-semibold">{user?.email}</h1>
                       <Button onClick={handleLogOut} className="my-2 w-full">Log Out</Button>
                     </div>
                   </div>
@@ -176,11 +184,20 @@ const Nav = () => {
             <div className="">
               {user ? (
                 <div className="">
-                  <img
-                    className="w-[45px] rounded-full "
-                    src={user?.photoURL}
-                    alt=""
-                  />
+                  <div className="dropdown dropdown-hover">
+                    <div tabIndex={0} role="button" className=" m-1">
+                      <img
+                        className="w-[45px] rounded-full flex lg:hidden"
+                        src={user?.photoURL}
+                        alt=""
+                      />
+                      </div>
+                    <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                      <h1 className="m-1 text-gray-900 shadow-md rounded-md p-1 font-semibold">{user?.displayName}</h1>
+                      <h1 className="m-1 text-gray-900 shadow-md rounded-md p-1 font-semibold">{user?.email}</h1>
+                      <Button onClick={handleLogOut} className="my-2 w-full">Log Out</Button>
+                    </div>
+                  </div>
                 </div>
               ) : (
                 <div className="flex items-center gap-x-1">
