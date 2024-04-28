@@ -102,7 +102,7 @@ const Nav = () => {
                   <div className="dropdown dropdown-hover">
                     <div tabIndex={0} role="button" className=" m-1">
                       <img
-                        className="w-[45px] rounded-full hidden lg:flex"
+                        className="w-[45px] h-[45px] rounded-full hidden lg:flex"
                         src={user?.photoURL}
                         alt=""
                       />
@@ -187,7 +187,7 @@ const Nav = () => {
                   <div className="dropdown dropdown-hover">
                     <div tabIndex={0} role="button" className=" m-1">
                       <img
-                        className="w-[45px] rounded-full flex lg:hidden"
+                        className="w-[45px] h-[45px] rounded-full flex lg:hidden"
                         src={user?.photoURL}
                         alt=""
                       />

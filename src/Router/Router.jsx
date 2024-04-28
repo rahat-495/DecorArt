@@ -9,9 +9,11 @@ import AddCraft from "../Pages/AddCraft/AddCraft";
 import AddCraftP from "../Private/AddCraftP";
 import CardsDetail from "../Pages/CardsDetail/CardsDetail";
 import CardsDetailP from "../Private/CardsDetailP";
+import MyListP from "../Private/MyListP";
 import SubCategories from "../Pages/SubCategories/SubCategories";
 import AllArt from "../Pages/AllArt&Craft/AllArt";
 import MyLIst from "../Pages/MyList/MyLIst";
+import Update from "../Pages/Update/Update";
 
 const router = createBrowserRouter([
   {
@@ -52,7 +54,12 @@ const router = createBrowserRouter([
       },
       {
         path : '/myList' ,
-        element : <MyLIst></MyLIst> ,
+        element : <MyListP><MyLIst></MyLIst></MyListP>,
+      },
+      {
+        path : '/update/:id' ,
+        element : <Update></Update> ,
+        loader : () => fetch(`http://localhost:5555/addCraftItem`)
       }
     ],
   },

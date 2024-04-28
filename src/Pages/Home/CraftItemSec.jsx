@@ -1,11 +1,13 @@
 
 import { Button } from "@material-tailwind/react";
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 
 const CraftItemSec = () => {
     
     const cards = useLoaderData() ;
+    const [cardslength , setLength] = useState(6) ;
 
     return (
         <div>
@@ -13,14 +15,14 @@ const CraftItemSec = () => {
                 <h1 className="text-3xl font-semibold pop my-10">Craft Items</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {
-                        cards.map(card => <div key={card._id} className="card border p-6">
+                        cards.slice(0 , cardslength).map(card => <div key={card._id} className="card border p-6">
                         <figure><img className="w-full rounded-xl h-[250px]" src={card.image} /></figure>
                         <div className="card-body p-0 pt-4">
                           <h2 className="card-title">
                             {card.itemName}
                           </h2>
                           <p className="gro text-lg">{card.shortDesc}</p>
-                          <div className="card-actions">
+                          <div className="card-actions gap-8">
                             <div className="badge badge-outline">
                                 <h1 className="font-semibold gro">Price : <span className="font-medium ml-3"> {card.price}</span></h1>
                             </div> 
@@ -29,11 +31,14 @@ const CraftItemSec = () => {
                             </div>
                           </div>
                           <Link to={`/cardsDetails/${card._id}`}>
-                            <Button className="mt-4 btn hover:btn-ghost hover:border">View Details</Button>
+                            <Button className="mt-4 w-full btn hover:btn-ghost hover:border">View Details</Button>
                           </Link>
                         </div>
                       </div>)
                     }
+                </div>
+                <div className="flex items-center justify-center gap-6">
+                    <Button onClick={() => setLength(cardslength+6)} className="my-10">View More</Button>
                 </div>
             </div>
         </div>

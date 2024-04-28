@@ -2,7 +2,8 @@
 import { Input } from "@material-tailwind/react";
 import { useContext } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import Swal from "sweetalert2";
 
 const AddCraft = () => {
 
@@ -38,8 +39,12 @@ const AddCraft = () => {
         .then(data => {
             console.log(data);
             if(data.insertedId){
-                toast.success('Item Added Success Fully !') ;
-                // form.reset() ;
+                Swal.fire({
+                    title: "Good job",
+                    text: "Item Added Success Fully !",
+                    icon: "success"
+                  });
+                form.reset() ;
             }
         })
     }
@@ -50,26 +55,26 @@ const AddCraft = () => {
                 <form onSubmit={handleSubmit}>
 
                     <div className="w-full my-5 flex items-center justify-between gap-x-5">
-                        <Input type="text" name="itemName" label="Item Name"></Input>
-                        <Input type="text" name="subName" label="Subcategory Name"></Input>
+                        <Input required type="text" name="itemName" label="Item Name"></Input>
+                        <Input required type="text" name="subName" label="Subcategory Name"></Input>
                     </div>
 
                     <div className="w-full my-5 flex items-center justify-between gap-x-5">
-                        <Input type="text" name="shortDesc" label="Short Description"></Input>
-                        <Input type="text" name="image" label="Image-URL"></Input>
+                        <Input required type="text" name="shortDesc" label="Short Description"></Input>
+                        <Input required type="text" name="image" label="Image-URL"></Input>
                     </div>
 
                     <div className="w-full my-5 flex items-center justify-between gap-x-5">
-                        <Input type="text" name="price" label="price"></Input>
-                        <Input type="text" name="processing" label="Processing Time"></Input>
+                        <Input required type="text" name="price" label="price"></Input>
+                        <Input required type="text" name="processing" label="Processing Time"></Input>
                     </div>
 
                     <div className="w-full my-5 grid grid-cols-2 items-center justify-between gap-x-5">
-                        <Input type="text" name="rating" label="Rating" className="w-2/4"></Input>
+                        <Input required type="text" name="rating" label="Rating" className="w-2/4"></Input>
                         {/* <Input type="text" name="subName" label="Customization"></Input> */}
                         <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3 py-2 rounded-lg">
                             <label className="text-[#607D8B]" htmlFor="customization">Customization :</label>
-                            <select name="customization" id="customization">
+                            <select required name="customization" id="customization">
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
@@ -77,7 +82,7 @@ const AddCraft = () => {
                     </div>
 
                     <div className="w-full my-5 flex items-center justify-between gap-x-5">
-                        <Input type="text" name="stockStatus" label="Stock Status" defaultValue={`In stock , Made to Order`}></Input>
+                        <Input required type="text" name="stockStatus" label="Stock Status" defaultValue={`In stock , Made to Order`}></Input>
                         <Input type="text" name="userName" label="User Name" defaultValue={user.displayName} readOnly></Input>
                     </div>
                     
