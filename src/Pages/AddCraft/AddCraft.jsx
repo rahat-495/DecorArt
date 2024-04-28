@@ -1,12 +1,13 @@
 
 import { Input } from "@material-tailwind/react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import Swal from "sweetalert2";
 
 const AddCraft = () => {
 
+    const [loading , setLoading] = useState(false) ;
     const {user} = useContext(AuthContext) ;
     
     const handleSubmit = (e) => {
@@ -28,6 +29,7 @@ const AddCraft = () => {
 
         console.log(itemInfo);
 
+        setLoading(true) ;
         fetch(`http://localhost:5555/addCraftItem` , {
             method : 'POST' ,
             headers : {
@@ -37,6 +39,7 @@ const AddCraft = () => {
         })
         .then(res => res.json())
         .then(data => {
+            setLoading(false) ;
             console.log(data);
             if(data.insertedId){
                 Swal.fire({
@@ -49,14 +52,29 @@ const AddCraft = () => {
         })
     }
 
+    if(loading){
+        return <span className="loading min-h-[100vh] mx-auto min-w-[20%] flex items-center justify-center loading-spinner loading-lg"></span>
+    }
+
     return (
         <div className="max-w-[1440px] mx-auto px-10 my-14">
             <div className="">
                 <form onSubmit={handleSubmit}>
 
-                    <div className="w-full my-5 flex items-center justify-between gap-x-5">
-                        <Input required type="text" name="itemName" label="Item Name"></Input>
-                        <Input required type="text" name="subName" label="Subcategory Name"></Input>
+                    <div className="w-full my-5 grid grid-cols-2 gap-x-5">
+                        <Input required type="text" name="itemName" label="Item Name" className="w-2/4"></Input>
+                        {/* <Input required type="text" name="subName" label="Subcategory Name"></Input> */}
+                        <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3  py-2 rounded-lg">
+                            <label className="text-[#607D8B]" htmlFor="subName">Sub Categorie Name :</label>
+                            <select required name="subName" id="subName">
+                                <option value="Clay-Made-Pottry">Clay-made pottery</option>
+                                <option value="Stoneware">Stoneware</option>
+                                <option value="Porcelain">Porcelain</option>
+                                <option value="Terra-Cotta">Terra Cotta</option>
+                                <option value="Ceramics">Ceramics & Architectura</option>
+                                <option value="decor">Home decor pottery</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div className="w-full my-5 flex items-center justify-between gap-x-5">

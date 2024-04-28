@@ -68,7 +68,18 @@ const Update = () => {
 
                 <div className="w-full my-5 flex items-center justify-between gap-x-5">
                     <Input defaultValue={updateDate.itemName} required type="text" name="itemName" label="Item Name"></Input>
-                    <Input defaultValue={updateDate.subName} required type="text" name="subName" label="Subcategory Name"></Input>
+                    {/* <Input defaultValue={updateDate.subName} required type="text" name="subName" label="Subcategory Name"></Input> */}
+                    <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3  py-2 rounded-lg">
+                            <label className="text-[#607D8B]" htmlFor="subName">Sub Categorie Name :</label>
+                            <select required name="subName" id="subName">
+                                <option value="Clay-Made-Pottry">Clay-made pottery</option>
+                                <option value="Stoneware">Stoneware</option>
+                                <option value="Porcelain">Porcelain</option>
+                                <option value="Terra-Cotta">Terra Cotta</option>
+                                <option value="Ceramics">Ceramics & Architectura</option>
+                                <option value="decor">Home decor pottery</option>
+                            </select>
+                        </div>
                 </div>
 
                 <div className="w-full my-5 flex items-center justify-between gap-x-5">

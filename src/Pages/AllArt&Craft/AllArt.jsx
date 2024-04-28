@@ -1,12 +1,27 @@
 
 import { Button } from "@material-tailwind/react";
-import { FaStar } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import { Card, Typography } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
 
 const AllArt = () => {
   
+  const [loading , setLoading] = useState(false) ;
   const cards = useLoaderData();
+
+  useEffect(() => {
+    setLoading(true) ;
+    fetch(`http://localhost:5555/addCraftItem`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        setLoading(false)
+    })
+  } , [])
+
+  if(loading){
+      return <span className="loading min-h-[100vh] mx-auto min-w-[20%] flex items-center justify-center loading-spinner loading-lg"></span>
+  }
 
   const TABLE_HEAD = ["Item Name", "Sub Categorie" , "Rating", "Price", ""];
 

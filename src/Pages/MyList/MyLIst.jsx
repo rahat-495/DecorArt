@@ -10,14 +10,21 @@ const MyLIst = () => {
 
     const {user} = useContext(AuthContext) ;
     const [ cards , setCards ] = useState([]) ;
+    const [loading , setLoading] = useState(false) ;
 
     useEffect(() => {
+        setLoading(true) ;
         fetch(`http://localhost:5555/myList/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setCards(data) ;
+            setLoading(false) ;
         })
     } , [user])
+
+    if(loading){
+      return <span className="loading min-h-[100vh] mx-auto min-w-[20%] flex items-center justify-center loading-spinner loading-lg"></span>
+    }
 
     const handleDelete = (id) => {
 

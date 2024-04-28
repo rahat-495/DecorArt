@@ -2,7 +2,7 @@
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { Link, useLoaderData, useSearchParams } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const CraftItemSec = () => {
     
