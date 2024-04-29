@@ -25,32 +25,33 @@ const Banner = () => {
           },
           768: {
             width: 768,
-            slidesPerView: 1,
+            slidesPerView: 2,
           },
         }}
-        spaceBetween={10}
+        pagination={false}
+        spaceBetween={30}
         slidesPerView={2}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <img className='rounded-xl sm:w-[600px] md:w-auto lg:w-[700px] lg:h-[450px]' src='https://img.freepik.com/premium-photo/row-vases-are-lined-up-wooden-table_865967-597218.jpg?size=626&ext=jpg' alt="" />
+          <img className='rounded-xl w-[600px] h-[120px] md:w-[600px] md:h-[350px] lg:w-[700px] lg:h-[450px]' src='https://img.freepik.com/premium-photo/row-vases-are-lined-up-wooden-table_865967-597218.jpg?size=626&ext=jpg' alt="" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <img className='rounded-xl sm:w-[600px] md:w-auto lg:w-[700px] lg:h-[450px] ' src="https://png.pngtree.com/background/20230612/original/pngtree-long-row-of-brown-pottery-wares-in-a-workshop-picture-image_3371995.jpg" alt="" />
+          <img className='rounded-xl w-[600px] h-[120px] md:w-[600px] md:h-[350px] lg:w-[700px] lg:h-[450px] ' src="https://png.pngtree.com/background/20230612/original/pngtree-long-row-of-brown-pottery-wares-in-a-workshop-picture-image_3371995.jpg" alt="" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <img className='rounded-xl sm:w-[600px] md:w-auto lg:w-[700px] lg:h-[450px] ' src="https://static.toiimg.com/photo/108252156.cms" alt="" />
+          <img className='rounded-xl w-[600px] h-[120px] md:w-[600px] md:h-[350px] lg:w-[700px] lg:h-[450px] ' src="https://static.toiimg.com/photo/108252156.cms" alt="" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <img className='rounded-xl sm:w-[600px] md:w-auto lg:w-[700px] lg:h-[450px] ' src="https://as2.ftcdn.net/v2/jpg/03/15/68/05/1000_F_315680531_ym2Xi2OOSXokDDM82z2LfJi0ftwGsXJg.jpg" alt="" />
+          <img className='rounded-xl w-[600px] h-[120px] md:w-[600px] md:h-[350px] lg:w-[700px] lg:h-[450px] ' src="https://as2.ftcdn.net/v2/jpg/03/15/68/05/1000_F_315680531_ym2Xi2OOSXokDDM82z2LfJi0ftwGsXJg.jpg" alt="" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <img className='rounded-xl sm:w-[600px] md:w-auto lg:w-[700px] lg:h-[450px] ' src='https://img.freepik.com/premium-photo/cropped-image-unrecognizable-pottery-woman-working-with-pottery-wheel-cozy-workshop-making-vase-mug-creative-people_115318-4110.jpg' alt="" />
+          <img className='rounded-xl w-[600px] h-[120px] md:w-[600px] md:h-[350px] lg:w-[700px] lg:h-[450px] ' src='https://img.freepik.com/premium-photo/cropped-image-unrecognizable-pottery-woman-working-with-pottery-wheel-cozy-workshop-making-vase-mug-creative-people_115318-4110.jpg' alt="" />
         </SwiperSlide>
 
         </Swiper> 

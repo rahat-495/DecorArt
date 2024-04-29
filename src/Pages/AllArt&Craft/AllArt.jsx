@@ -30,7 +30,7 @@ const AllArt = () => {
       <div className="flex flex-col items-center mx-auto justify-center mb-20 p-10">
         <h1 className="text-3xl font-semibold pop my-10">All Craft Items</h1>
         
-        <Card className="h-full w-full overflow-hidden">
+        <Card className="h-full w-full overflow-scroll md:overflow-hidden lg:overflow-hidden">
           <table className="w-full min-w-max table-auto text-left">
             <thead>
               <tr>

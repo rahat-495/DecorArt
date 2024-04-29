@@ -61,11 +61,11 @@ const AddCraft = () => {
             <div className="">
                 <form onSubmit={handleSubmit}>
 
-                    <div className="w-full my-5 grid grid-cols-2 gap-x-5">
+                    <div className="w-full my-5 grid lg:grid-cols-2 gap-5">
                         <Input required type="text" name="itemName" label="Item Name" className="w-2/4"></Input>
                         {/* <Input required type="text" name="subName" label="Subcategory Name"></Input> */}
-                        <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3  py-2 rounded-lg">
-                            <label className="text-[#607D8B]" htmlFor="subName">Sub Categorie Name :</label>
+                        <div className="w-full px-1 py-3 border flex items-center justify-between border-[#B0BEC5] md:px-3 md:py-3 lg:px-3 lg:py-1 rounded-lg">
+                            <label className="text-[#607D8B] text-sm lg:text-base" htmlFor="subName">Sub Categorie Name :</label>
                             <select required name="subName" id="subName">
                                 <option value="Clay-Made-Pottry">Clay-made pottery</option>
                                 <option value="Stoneware">Stoneware</option>
@@ -77,18 +77,18 @@ const AddCraft = () => {
                         </div>
                     </div>
 
-                    <div className="w-full my-5 flex items-center justify-between gap-x-5">
+                    <div className="w-full my-5 flex flex-col lg:flex-row items-center justify-between gap-5">
                         <Input required type="text" name="shortDesc" label="Short Description"></Input>
                         <Input required type="text" name="image" label="Image-URL"></Input>
                     </div>
 
-                    <div className="w-full my-5 flex items-center justify-between gap-x-5">
+                    <div className="w-full my-5 flex flex-col lg:flex-row items-center justify-between gap-5">
                         <Input required type="text" name="price" label="price"></Input>
                         <Input required type="text" name="processing" label="Processing Time"></Input>
                     </div>
 
-                    <div className="w-full my-5 grid grid-cols-2 items-center justify-between gap-x-5">
-                        <Input required type="text" name="rating" label="Rating" className="w-2/4"></Input>
+                    <div className="w-full my-5 grid lg:grid-cols-2 gap-5">
+                        <Input required type="text" name="rating" label="Rating" className="w-full"></Input>
                         {/* <Input type="text" name="subName" label="Customization"></Input> */}
                         <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3 py-2 rounded-lg">
                             <label className="text-[#607D8B]" htmlFor="customization">Customization :</label>
@@ -99,7 +99,7 @@ const AddCraft = () => {
                         </div>
                     </div>
 
-                    <div className="w-full my-5 flex items-center justify-between gap-x-5">
+                    <div className="w-full my-5 flex flex-col lg:flex-row items-center justify-between gap-5">
                         <Input required type="text" name="stockStatus" label="Stock Status" defaultValue={`In stock , Made to Order`}></Input>
                         <Input type="text" name="userName" label="User Name" defaultValue={user.displayName} readOnly></Input>
                     </div>

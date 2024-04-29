@@ -14,7 +14,7 @@ const CategoriesSec = () => {
                 <h1 className="text-3xl font-semibold pop my-10">Art & Craft Categories </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <Link to={'/subCategorie/Clay'}>
-                    <Card className="mt-6 w-96 shadow-none border pt-10">
+                    <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
                         src="https://images.squarespace-cdn.com/content/v1/5d97bf677e4d3c11df6d859c/1673297209937-VTBHDHDPTIKJ63U3H6GU/Making+Pottery+at+Oxford+Clay+.jpg"
@@ -33,7 +33,7 @@ const CategoriesSec = () => {
                 </Link>
 
                 <Link to={'/subCategorie/Stoneware'}>
-                    <Card className="mt-6 w-96 shadow-none border pt-10">
+                    <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
                         src="https://cdn.shopify.com/s/files/1/1186/0576/files/Pics-for-CeramicTemplate-01.jpg?v=1486719916"
@@ -52,7 +52,7 @@ const CategoriesSec = () => {
                 </Link>
 
                 <Link to={'/subCategorie/Porcelain'}>
-                    <Card className="mt-6 w-96 shadow-none border pt-10">
+                    <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
                         src="https://images.squarespace-cdn.com/content/v1/5d97bf677e4d3c11df6d859c/1673297209937-VTBHDHDPTIKJ63U3H6GU/Making+Pottery+at+Oxford+Clay+.jpg"
@@ -71,7 +71,7 @@ const CategoriesSec = () => {
                 </Link>
 
                 <Link to={'/subCategorie/TerraCotta'}>
-                    <Card className="mt-6 w-96 shadow-none border pt-10">
+                    <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
                         className="w-full h-full"
@@ -91,7 +91,7 @@ const CategoriesSec = () => {
                 </Link>
 
                 <Link to={'/subCategorie/Ceramics'}>
-                    <Card className="mt-6 w-96 shadow-none border pt-10">
+                    <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
                         className="w-full h-full"
@@ -111,7 +111,7 @@ const CategoriesSec = () => {
                 </Link>
 
                 <Link to={'/subCategorie/decorPottery'}>
-                    <Card className="mt-6 w-96 shadow-none border pt-10">
+                    <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
                         className="w-full h-full"

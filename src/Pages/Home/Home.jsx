@@ -25,7 +25,7 @@ const Home = () => {
     }
 
     return (
-        <div className="lg:max-w-[1440px] lg:mx-auto">
+        <div className="lg:max-w-[1440px] lg:mx-auto overflow-x-hidden">
             <Banner></Banner>
             <CraftItemSec></CraftItemSec>
             <CategoriesSec></CategoriesSec>

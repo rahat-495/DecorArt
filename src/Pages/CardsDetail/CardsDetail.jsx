@@ -9,16 +9,18 @@ const CardsDetail = () => {
         <div className="w-[1440px] mx-auto">
             <div className="my-20 flex-col mt-[250px] px-10 min-h-[55vh] flex justify-between gap-5 lg:flex-row">
                 <div className="w-full lg:w-1/2 rounded-lg">
-                    <img data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" className="rounded-lg w-2/4 h-[300px] lg:w-4/5" src={data?.image} alt="" />
+                    <img data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" className="rounded-lg w-[26%] h-[20%] md:w-2/4 md:h-[400px] lg:w-4/5" src={data?.image} alt="" />
                 </div>
 
                 <div className="lg:w-1/2 ">
-                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100" className="text-3xl font-semibold pop">Item Name : {data?.itemName}</h1>
+                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100" className="text-xl md:text-3xl lg:text-3xl font-semibold pop">Item Name : {data?.itemName}</h1>
 
-                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100" className="text-2xl mt-2 font-medium pop">Sub Categorie : {data?.subName}</h1>
+                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100" className="text-xl md:text-2xl lg:text-2xl mt-2 font-medium pop">Sub Categorie : {data?.subName}</h1>
 
-                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" className="my-5 text-xl"><span className="font-bold">Description :</span> 
-                    {data?.shortDesc}</p>
+                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" className="my-5 border rounded-lg p-3 w-[350px] md:w-[600px] lg:w-auto gap-4 flex lg:text-xl lg:border-none lg:p-0">
+                        <span className="font-bold w-[200px] mr-3 lg:w-auto">Description:</span>
+                        {data?.shortDesc}
+                    </p>
 
                     <div className="flex gap-3 my-5 flex-col">
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400" > Customization :<span className="font-medium"> {data.customization} </span> </p>
