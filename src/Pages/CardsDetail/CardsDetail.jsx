@@ -17,8 +17,8 @@ const CardsDetail = () => {
 
                     <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100" className="text-xl md:text-2xl lg:text-2xl mt-2 font-medium pop">Sub Categorie : {data?.subName}</h1>
 
-                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" className="my-5 border rounded-lg p-3 w-[350px] md:w-[600px] lg:w-auto gap-4 flex lg:text-xl lg:border-none lg:p-0">
-                        <span className="font-bold w-[200px] mr-3 lg:w-auto">Description:</span>
+                    <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" className="my-5 rounded-lg  w-[350px] md:w-[600px] lg:w-auto flex lg:text-xl ">
+                        <span className="font-bold lg:w-auto"></span>
                         {data?.shortDesc}
                     </p>
 

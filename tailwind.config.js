@@ -11,7 +11,10 @@ export default {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light"],
+    themes: [
+      "light",
+      "dark"
+    ],
   },
 };
 
@@ -25,6 +28,9 @@ module.exports = withMT({
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light"],
+    themes: [
+      "light",
+      "dark"
+    ],
   },
 });

@@ -37,7 +37,7 @@ const CraftItemSec = () => {
                             </div>
                           </div>
                           <Link to={`/cardsDetails/${card._id}`}>
-                            <Button className="mt-4 w-full btn hover:btn-ghost hover:border">View Details</Button>
+                            <Button className="mt-4 w-full btn btn-outline">View Details</Button>
                           </Link>
                         </div>
                       </div> </Fade>)

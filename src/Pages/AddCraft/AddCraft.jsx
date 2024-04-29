@@ -73,9 +73,9 @@ const AddCraft = () => {
                         </Fade>
                         
                         <Fade direction="right">
-                            <div className="w-full px-1 py-3 border flex items-center justify-between border-[#B0BEC5] md:px-3 md:py-3 lg:px-3 lg:py-1 rounded-lg">
+                            <div className="w-full bg-tr px-1 py-3 border flex items-center justify-between border-[#B0BEC5] md:px-3 md:py-3 lg:px-3 lg:py-1 rounded-lg">
                                 <label className="text-[#607D8B] text-sm lg:text-base" htmlFor="subName">Sub Categorie Name :</label>
-                                <select required name="subName" id="subName">
+                                <select  className="bg-transparent" required name="subName" id="subName">
                                     <option value="Clay-Made-Pottry">Clay-made pottery</option>
                                     <option value="Stoneware">Stoneware</option>
                                     <option value="Porcelain">Porcelain</option>
@@ -113,7 +113,7 @@ const AddCraft = () => {
                         <Fade direction="right">
                             <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3 py-2 rounded-lg">
                                 <label className="text-[#607D8B]" htmlFor="customization">Customization :</label>
-                                <select required name="customization" id="customization">
+                                <select className="bg-transparent" required name="customization" id="customization">
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
                                 </select>
