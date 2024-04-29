@@ -13,7 +13,7 @@ const CategoriesSec = () => {
             <div className="flex flex-col items-center justify-center">
                 <h1 className="text-3xl font-semibold pop my-10">Art & Craft Categories </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <Link to={'/subCategorie/Clay'}>
+                <Link to={'/subCategorie/Clay-Made-Pottry'}>
                     <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
@@ -70,7 +70,7 @@ const CategoriesSec = () => {
                     </Card>
                 </Link>
 
-                <Link to={'/subCategorie/TerraCotta'}>
+                <Link to={'/subCategorie/Terra-Cotta'}>
                     <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img
@@ -110,7 +110,7 @@ const CategoriesSec = () => {
                     </Card>
                 </Link>
 
-                <Link to={'/subCategorie/decorPottery'}>
+                <Link to={'/subCategorie/Decor-Pottery'}>
                     <Card className="mt-6 mx-5 w-auto lg:w-96 shadow-none border pt-10">
                     <CardHeader color="blue-gray" className="relative h-56">
                         <img

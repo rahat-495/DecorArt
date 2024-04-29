@@ -72,7 +72,7 @@ const AddCraft = () => {
                                 <option value="Porcelain">Porcelain</option>
                                 <option value="Terra-Cotta">Terra Cotta</option>
                                 <option value="Ceramics">Ceramics & Architectura</option>
-                                <option value="decor">Home decor pottery</option>
+                                <option value="Decor-Pottery">Home decor pottery</option>
                             </select>
                         </div>
                     </div>

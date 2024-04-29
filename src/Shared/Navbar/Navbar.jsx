@@ -1,3 +1,4 @@
+
 import {
   Navbar,
   MobileNav,
@@ -10,6 +11,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Auth/AuthProvider";
 
 const Nav = () => {
+
   const [openNav, setOpenNav] = useState(false);
   const { user , logOut } = useContext(AuthContext);
 

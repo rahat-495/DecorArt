@@ -1,8 +1,53 @@
 
+import { Button } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa";
+import { Link, useParams } from "react-router-dom";
+
 const SubCategories = () => {
+
+    const [loadedData , setLoadedData] = useState([]) ;
+    const {id} = useParams() ;
+    
+    useEffect(() => {
+        fetch(`http://localhost:5555/subCategorie/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            setLoadedData(data) ;
+        })
+    } , [id])
+
+    console.log(loadedData);
+
     return (
-        <div>
-            
+        <div className="max-w-[1440px] mx-auto">
+            <div className="flex flex-col items-center mx-auto justify-center mb-20 p-10">
+                <h1 className="text-3xl font-semibold pop my-10 hover:underline">Sub-Categories Items</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {
+                        loadedData.map(card => <div key={card._id} className="card border p-6">
+                        <figure><img className="w-full rounded-xl h-[250px]" src={card.image} /></figure>
+                        <div className="card-body p-0 pt-4">
+                          <h2 className="card-title">
+                            {card.itemName}
+                          </h2>
+                          <p className="gro text-lg">{card.shortDesc}</p>
+                          <div className="card-actions gap-8">
+                            <div className="badge badge-outline">
+                                <h1 className="font-semibold gro">Price : <span className="font-medium ml-3"> {card.price}</span></h1>
+                            </div> 
+                            <div className="badge badge-outline">
+                                <h1 className="font-semibold gro flex items-center justify-center">Rating : <span className="font-medium ml-5 items-center justify-center flex gap-1"> {card.rating} <FaStar className="text-yellow-600"/></span></h1>
+                            </div>
+                          </div>
+                          <Link to={`/cardsDetails/${card._id}`}>
+                            <Button className="mt-4 w-full btn hover:btn-ghost hover:border">View Details</Button>
+                          </Link>
+                        </div>
+                      </div>)
+                    }
+                </div>
+            </div>
         </div>
     );
 };
