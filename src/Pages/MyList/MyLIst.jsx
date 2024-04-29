@@ -64,6 +64,15 @@ const MyLIst = () => {
         <div className="max-w-[1440px] mx-auto">
             <div className="flex flex-col items-center mx-auto justify-center mb-20 p-10">
                 <h1 className="text-3xl font-semibold pop my-10">My Added Items</h1>
+                
+                <details className="dropdown mb-14">
+                  <summary className="m-1 btn">Filter</summary>
+                  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                    <li><a>Item 1</a></li>
+                    <li><a>Item 2</a></li>
+                  </ul>
+                </details>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                     {
                         cards.map(card => <div key={card._id} className="card border p-6">
