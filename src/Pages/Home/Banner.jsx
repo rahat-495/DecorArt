@@ -35,7 +35,7 @@ const Banner = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <img className='rounded-xl w-[600px] h-[120px] md:w-[600px] md:h-[350px] lg:w-[700px] lg:h-[450px]' src='https://img.freepik.com/premium-photo/row-vases-are-lined-up-wooden-table_865967-597218.jpg?size=626&ext=jpg' alt="" />
+          <img className='rounded-xl w-[600px] h-[120px] md:w-[600px] md:h-[350px] lg:w-[750px] lg:h-[450px]' src='https://img.freepik.com/premium-photo/row-vases-are-lined-up-wooden-table_865967-597218.jpg?size=626&ext=jpg' alt="" />
         </SwiperSlide>
 
         <SwiperSlide>
