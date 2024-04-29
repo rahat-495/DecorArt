@@ -10,6 +10,7 @@ const MyLIst = () => {
 
     const {user} = useContext(AuthContext) ;
     const [ cards , setCards ] = useState([]) ;
+    const [filter , setFilter] = useState([]) ;
     const [loading , setLoading] = useState(false) ;
 
     useEffect(() => {
@@ -19,6 +20,7 @@ const MyLIst = () => {
         .then(data => {
             setCards(data) ;
             setLoading(false) ;
+            setFilter(data) ;
         })
     } , [user])
 
@@ -60,6 +62,21 @@ const MyLIst = () => {
       });
     }
 
+    const handleYesNo = (any) => {
+      // console.log(cards , any);
+      if(any === 'yes'){
+        const remaining = cards.filter(card => card.customization === any) ;
+        setFilter(remaining);
+      }
+      else if(any === 'no'){
+        const remaining = cards.filter(card => card.customization === any) ;
+        setFilter(remaining);
+      }
+      else{
+        setFilter(cards)
+      }
+    }
+
     return (
         <div className="max-w-[1440px] mx-auto">
             <div className="flex flex-col items-center mx-auto justify-center mb-20 p-10">
@@ -67,15 +84,16 @@ const MyLIst = () => {
                 
                 <details className="dropdown mb-14">
                   <summary className="m-1 btn">Filter</summary>
-                  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
+                  <ul className="p-2 gap-3 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                    <Button onClick={() => handleYesNo('all')}>All</Button>
+                    <Button onClick={() => handleYesNo('yes')}>Yes</Button>
+                    <Button onClick={() => handleYesNo('no')}>No</Button>
                   </ul>
                 </details>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                     {
-                        cards.map(card => <div key={card._id} className="card border p-6">
+                        filter.map(card => <div key={card._id} className="card border p-6">
                         <figure><img className="w-full rounded-xl h-[250px]" src={card.image} /></figure>
                         <div className="card-body p-0 pt-4">
                           <h2 className="card-title">
