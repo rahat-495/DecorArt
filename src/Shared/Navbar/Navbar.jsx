@@ -139,9 +139,9 @@ const Nav = () => {
                         alt=""
                       />
                       </div>
-                    <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                      <h1 className="m-1 shadow-sm p-1 rounded-md font-semibold">{user?.displayName}</h1>
-                      <h1 className="m-1 shadow-sm p-1 rounded-md font-semibold">{user?.email}</h1>
+                    <div tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-gray-400 rounded-box w-52">
+                      <h1 className="m-1 border p-1 rounded-md font-semibold">{user?.displayName}</h1>
+                      <h1 className="m-1 border p-1 rounded-md font-semibold">{user?.email}</h1>
                       <Button onClick={handleLogOut} className="my-2 w-full">Log Out</Button>
                     </div>
                   </div>

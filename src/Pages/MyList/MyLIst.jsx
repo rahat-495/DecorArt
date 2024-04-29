@@ -86,10 +86,10 @@ const MyLIst = () => {
                 
                 <details className="dropdown mb-14">
                   <summary className="m-1 btn">Filter</summary>
-                  <ul className="p-2 gap-3 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                    <Button onClick={() => handleYesNo('all')}>All</Button>
-                    <Button onClick={() => handleYesNo('yes')}>Yes</Button>
-                    <Button onClick={() => handleYesNo('no')}>No</Button>
+                  <ul className="p-2 gap-3 shadow menu dropdown-content z-[1] bg-gray-700 rounded-box w-52">
+                    <Button className="btn btn-outline" onClick={() => handleYesNo('all')}>All</Button>
+                    <Button className="btn btn-outline" onClick={() => handleYesNo('yes')}>Yes</Button>
+                    <Button className="btn btn-outline" onClick={() => handleYesNo('no')}>No</Button>
                   </ul>
                 </details>
 
@@ -115,9 +115,9 @@ const MyLIst = () => {
                                 <h1 className="font-semibold gro flex items-center justify-center">Processing Time : <span className="font-medium ml-5 items-center justify-center flex gap-1"> {card.processing} <MdAccessTime/> Minute </span></h1>
                             </div>
                           <div className="flex gap-5">
-                            <Button onClick={() => handleDelete(card._id)} className="mt-4 bg-red-900 w-[170px] ">DeleTe</Button>
+                            <Button onClick={() => handleDelete(card._id)} className="mt-4 bg-red-900 w-[180px] ">DeleTe</Button>
                             <Link to={`/update/${card._id}`}>
-                              <Button className="mt-4 w-[170px] bg-gray-700">Update</Button>
+                              <Button className="mt-4 w-[180px] bg-gray-700">Update</Button>
                             </Link>
                           </div>
                         </div>

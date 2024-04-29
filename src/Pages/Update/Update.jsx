@@ -69,7 +69,7 @@ const Update = () => {
   return (
     <div className="max-w-[1440px] mx-auto px-10 my-14">
       <img
-        className="w-full h-[500px] rounded-xl my-20"
+        className="w-full h-[300px] rounded-xl my-20"
         src={updateDate.image}
         alt=""
       />
@@ -93,7 +93,7 @@ const Update = () => {
               >
                 Sub Categorie Name :
               </label>
-              <select defaultValue={updateDate.subName} required name="subName" id="subName">
+              <select className="bg-transparent" defaultValue={updateDate.subName} required name="subName" id="subName">
                 <option value="Clay-Made-Pottry">Clay-made pottery</option>
                 <option value="Stoneware">Stoneware</option>
                 <option value="Porcelain">Porcelain</option>
@@ -140,7 +140,7 @@ const Update = () => {
               <label className="text-[#607D8B]" htmlFor="customization">
                 Customization :
               </label>
-              <select defaultValue={updateDate.customization} required name="customization" id="customization">
+              <select className="bg-transparent" defaultValue={updateDate.customization} required name="customization" id="customization">
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
               </select>
