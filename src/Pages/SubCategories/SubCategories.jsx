@@ -2,6 +2,7 @@
 import { Button } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { MdAccessTime } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 
 const SubCategories = () => {
@@ -28,18 +29,24 @@ const SubCategories = () => {
                         loadedData.map(card => <div key={card._id} className="card border p-6">
                         <figure><img className="w-full rounded-xl h-[250px]" src={card.image} /></figure>
                         <div className="card-body p-0 pt-4">
-                          <h2 className="card-title">
+                          <h2 className="card-title gro font-bold">
                             {card.itemName}
                           </h2>
+                          <h2 className="font-semibold gro text-lg">
+                            {card.subName}
+                          </h2>
                           <p className="gro text-lg">{card.shortDesc}</p>
-                          <div className="card-actions gap-8">
-                            <div className="badge badge-outline">
+                          <div className="card-actions grid grid-cols-2 gap-5 justify-between">
+                            <div className="badge badge-outline w-full">
                                 <h1 className="font-semibold gro">Price : <span className="font-medium ml-3"> {card.price}</span></h1>
                             </div> 
-                            <div className="badge badge-outline">
+                            <div className="badge badge-outline w-full">
                                 <h1 className="font-semibold gro flex items-center justify-center">Rating : <span className="font-medium ml-5 items-center justify-center flex gap-1"> {card.rating} <FaStar className="text-yellow-600"/></span></h1>
                             </div>
                           </div>
+                            <div className="badge badge-outline w-full">
+                                <h1 className="font-semibold gro flex items-start justify-center">Processing time : <span className="font-medium ml-5 items-center justify-center flex gap-1"> {card.processing} <MdAccessTime /> Minute</span></h1>
+                            </div>
                           <Link to={`/cardsDetails/${card._id}`}>
                             <Button className="mt-4 w-full btn hover:btn-ghost hover:border">View Details</Button>
                           </Link>

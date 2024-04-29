@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import Swal from "sweetalert2";
+import { MdAccessTime } from "react-icons/md";
 
 const MyLIst = () => {
 
@@ -101,14 +102,17 @@ const MyLIst = () => {
                           </h2>
                           <p className="gro text-lg">Customization : {card.customization}</p>
                           <p className="gro text-lg">Stock Status : {card.stockStatus}</p>
-                          <div className="card-actions">
-                            <div className="badge badge-outline">
+                          <div className="card-actions grid  grid-cols-2">
+                            <div className="badge badge-outline w-full">
                                 <h1 className="font-semibold gro">Price : <span className="font-medium ml-3"> {card.price}</span></h1>
                             </div> 
-                            <div className="badge badge-outline">
+                            <div className="badge badge-outline w-full">
                                 <h1 className="font-semibold gro flex items-center justify-center">Rating : <span className="font-medium ml-5 items-center justify-center flex gap-1"> {card.rating} <FaStar className="text-yellow-600"/></span></h1>
                             </div>
                           </div>
+                            <div className="badge badge-outline w-full">
+                                <h1 className="font-semibold gro flex items-center justify-center">Processing Time : <span className="font-medium ml-5 items-center justify-center flex gap-1"> {card.processing} <MdAccessTime/> Minute </span></h1>
+                            </div>
                           <div className="flex gap-5">
                             <Button onClick={() => handleDelete(card._id)} className="mt-4 bg-red-900 w-[170px] ">DeleTe</Button>
                             <Link to={`/update/${card._id}`}>
