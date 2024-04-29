@@ -7,18 +7,23 @@ import { Link, useParams } from "react-router-dom";
 
 const SubCategories = () => {
 
+    const [loading , setLoading] = useState(false) ;
     const [loadedData , setLoadedData] = useState([]) ;
     const {id} = useParams() ;
     
     useEffect(() => {
+        setLoading(true) ;
         fetch(`http://localhost:5555/subCategorie/${id}`)
         .then(res => res.json())
         .then(data => {
-            setLoadedData(data) ;
+          setLoadedData(data) ;
+          setLoading(false) ;
         })
     } , [id])
 
-    console.log(loadedData);
+    if(loading){
+      return <span className="loading min-h-[100vh] mx-auto min-w-[20%] flex items-center justify-center loading-spinner loading-lg"></span> ;
+    }
 
     return (
         <div className="max-w-[1440px] mx-auto">

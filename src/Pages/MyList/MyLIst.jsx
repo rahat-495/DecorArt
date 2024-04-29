@@ -55,7 +55,8 @@ const MyLIst = () => {
             console.log(data);
             if(data.acknowledged){
               const remaining = cards.filter(card => card._id !== id)
-              setCards(remaining)
+              setFilter(remaining) ;
+              setCards(remaining) ;
             }
           })
 
