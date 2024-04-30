@@ -8,6 +8,10 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
+----------------------------------------------- WebSite Name -----------------------------------------------
+
+                                                Decor Art
+
 ----------------------------------------------- Features -----------------------------------------------
 
 - Comprehensive articles and guides on various aspects of ceramics and pottery.
