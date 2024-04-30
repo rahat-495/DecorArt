@@ -69,7 +69,7 @@ const Update = () => {
   return (
     <div className="max-w-[1440px] mx-auto px-10 my-14">
       <img
-        className="w-full h-[300px] rounded-xl my-20"
+        className="w-full h-[300px] rounded-xl my-20 lg:h-[550px]"
         src={updateDate.image}
         alt=""
       />
