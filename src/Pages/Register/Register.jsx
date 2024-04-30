@@ -55,7 +55,10 @@ const Register = () => {
             })
           })
           .catch((error) => {
-            console.log(error);
+            console.log(error.message);
+            if(error.message.includes('Firebase: Error (auth/email-already-in-use).')){
+              toast.error('This Email Already in Use !') ;
+            }
           })
         }
         else{
