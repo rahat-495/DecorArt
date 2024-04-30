@@ -114,10 +114,10 @@ const MyLIst = () => {
                             <div className="badge badge-outline w-full">
                                 <h1 className="font-semibold gro flex items-center justify-center">Processing Time : <span className="font-medium ml-5 items-center justify-center flex gap-1"> {card.processing} <MdAccessTime/> Minute </span></h1>
                             </div>
-                          <div className="flex gap-5">
-                            <Button onClick={() => handleDelete(card._id)} className="mt-4 bg-red-900 w-[180px] ">DeleTe</Button>
+                          <div className="grid grid-cols-2 gap-5">
+                            <Button onClick={() => handleDelete(card._id)} className="mt-4 bg-red-900 w-full ">DeleTe</Button>
                             <Link to={`/update/${card._id}`}>
-                              <Button className="mt-4 w-[180px] bg-gray-700">Update</Button>
+                              <Button className="mt-4 w-full bg-gray-700">Update</Button>
                             </Link>
                           </div>
                         </div>
