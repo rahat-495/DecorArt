@@ -14,7 +14,7 @@ const Banner = () => {
           <h1 data-aos="fade-right" data-aos-duration="700" className='mon font-medium'>FEATURED AIM</h1>
           <p data-aos="fade-right" data-aos-duration="700" data-aos-delay="100" className="text-2xl leading-[40px] w-auto md:text-4xl md:leading-[55px] lg:w-[450px] lg:text-5xl lg:leading-[68px] mon">Discover Our Skilled Team Crafting Stunning Decor Art Pieces</p>
           <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
-            <Button className='mon w-fit btn border hover:text-gray-900 hover:bg-transparent  text-white'>Explore All</Button>
+            <Button className='mon w-fit btn border border-white hover:text-gray-500 hover:bg-transparent hover:border-gray-500 text-white'>Explore All</Button>
           </div>
         </div>
 
