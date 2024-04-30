@@ -9,6 +9,7 @@ const CraftItemSec = () => {
     
     const cards = useLoaderData() ;
     const [cardslength , setLength] = useState(6) ;
+    const [value , setValue] = useState(false) ;
 
     return (
         <div>
@@ -30,7 +31,7 @@ const CraftItemSec = () => {
                           <p className="gro text-lg">{card.shortDesc}</p>
                           <div className="card-actions grid grid-cols-2 gap-8">
                             <div className="badge badge-outline w-full">
-                                <h1 className="font-semibold gro">Price : <span className="font-medium ml-3"> {card.price}</span></h1>
+                                <h1 className="font-semibold gro">Price : <span className="font-medium ml-3">$ {card.price} </span></h1>
                             </div> 
                             <div className="badge badge-outline w-full">
                                 <h1 className="font-semibold gro flex items-center justify-center">Rating : <span className="font-medium ml-3 items-center justify-center flex gap-1"> {card.rating} <FaStar className="text-yellow-600"/></span></h1>
@@ -45,7 +46,11 @@ const CraftItemSec = () => {
                 </div>
                 <div className="flex items-center justify-center gap-6">
                   <Fade direction="up" delay={300}>
-                    <Button onClick={() => setLength(cardslength+6)} className="my-10">View More</Button>
+                    {
+                      value && cardslength > 6 ?
+                      <Button onClick={() => setLength(cardslength-6)} className="my-10">View Less</Button> :
+                      <Button onClick={() => (setValue(true) , setLength(cardslength+6))} className="my-10">View More</Button>  
+                    }
                   </Fade>
                 </div>
             </div>

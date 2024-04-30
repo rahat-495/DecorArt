@@ -91,7 +91,7 @@ const AllArt = () => {
                           color="blue-gray"
                           className="font-normal"
                         >
-                          {card.price}
+                          ${card.price}
                         </Typography>
                       </td>
                       <td className="flex items-center pt-2 justify-end pr-4">

@@ -105,7 +105,7 @@ const MyLIst = () => {
                           <p className="gro text-lg">Stock Status : {card.stockStatus}</p>
                           <div className="card-actions grid  grid-cols-2">
                             <div className="badge badge-outline w-full">
-                                <h1 className="font-semibold gro">Price : <span className="font-medium ml-3"> {card.price}</span></h1>
+                                <h1 className="font-semibold gro">Price : <span className="font-medium ml-3">$ {card.price}</span></h1>
                             </div> 
                             <div className="badge badge-outline w-full">
                                 <h1 className="font-semibold gro flex items-center justify-center">Rating : <span className="font-medium ml-5 items-center justify-center flex gap-1"> {card.rating} <FaStar className="text-yellow-600"/></span></h1>
