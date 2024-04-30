@@ -47,7 +47,7 @@ const CraftItemSec = () => {
                 <div className="flex items-center justify-center gap-6">
                   <Fade direction="up" delay={300}>
                     {
-                      value && cardslength > 6 ?
+                      (value && cardslength >= 7) ?
                       <Button onClick={() => setLength(cardslength-6)} className="my-10">View Less</Button> :
                       <Button onClick={() => (setValue(true) , setLength(cardslength+6))} className="my-10">View More</Button>  
                     }

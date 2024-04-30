@@ -26,7 +26,7 @@ const CardsDetail = () => {
                     <div className="flex gap-3 my-5 flex-col">
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400" > Customization :<span className="font-medium"> {data.customization} </span> </p>
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" > <span className="font-medium">Price : ${data.price}</span> </p>
-                        <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600" > <span className="font-medium flex gap-3 relative">Rating : {data.rating} <FaStar className="text-yellow-600 absolute left-24 top-[2px]"/></span> </p>
+                        <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600" > <span className="font-medium flex gap-3 relative">Rating : {data.rating} <FaStar className="text-yellow-600 absolute left-[85px] top-[2px]"/></span> </p>
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700" > <span className="font-medium">Processing Time : {data.processing} minute</span> </p>
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700" > <span className="font-medium">Stock-Status : {data.stockStatus}</span> </p>
                     </div>
