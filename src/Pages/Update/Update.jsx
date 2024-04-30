@@ -86,7 +86,7 @@ const Update = () => {
               defaultValue={updateDate.itemName}
             ></Input>
             {/* <Input required type="text" name="subName" label="Subcategory Name"></Input> */}
-            <div className="w-full px-1 py-3 border flex items-center justify-between border-[#B0BEC5] md:px-3 md:py-3 lg:px-3 lg:py-1 rounded-lg">
+            <div className="w-full bg-transparent px-1 py-3 border flex items-center justify-between border-[#B0BEC5] md:px-3 md:py-3 lg:px-3 lg:py-[6px] rounded-lg">
               <label
                 className="text-[#607D8B] text-sm lg:text-base"
                 htmlFor="subName"
@@ -135,7 +135,7 @@ const Update = () => {
               className="w-full"
               defaultValue={updateDate.rating}
             ></Input>
-            {/* <Input type="text" name="subName" label="Customization"></Input> */}
+
             <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3 py-2 rounded-lg">
               <label className="text-[#607D8B]" htmlFor="customization">
                 Customization :
@@ -148,13 +148,15 @@ const Update = () => {
           </div>
 
           <div className="w-full my-5 flex flex-col lg:flex-row items-center justify-between gap-5">
-            <Input
-              required
-              type="text"
-              name="stockStatus"
-              label="Stock Status"
-              defaultValue={updateDate.stockStatus}
-            ></Input>
+            <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3 py-2 rounded-lg">
+              <label className="text-[#607D8B]" htmlFor="stockStatus">
+              Stock Status :
+              </label>
+              <select className="bg-transparent" defaultValue={updateDate.customization} required name="stockStatus" id="stockStatus">
+                <option value="In Stock">In Stock</option>
+                <option value="Made to Order">Made to Order</option>
+              </select>
+            </div>
           </div>
 
           <div className="">

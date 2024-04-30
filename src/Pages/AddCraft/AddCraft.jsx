@@ -73,7 +73,7 @@ const AddCraft = () => {
                         </Fade>
                         
                         <Fade direction="right">
-                            <div className="w-full bg-tr px-1 py-3 border flex items-center justify-between border-[#B0BEC5] md:px-3 md:py-3 lg:px-3 lg:py-1 rounded-lg">
+                            <div className="w-full bg-transparent px-1 py-3 border flex items-center justify-between border-[#B0BEC5] md:px-3 md:py-3 lg:px-3 lg:py-[6px] rounded-lg">
                                 <label className="text-[#607D8B] text-sm lg:text-base" htmlFor="subName">Sub Categorie Name :</label>
                                 <select  className="bg-transparent" required name="subName" id="subName">
                                     <option value="Clay-Made-Pottry">Clay-made pottery</option>
@@ -123,7 +123,15 @@ const AddCraft = () => {
 
                     <div className="w-full my-5 grid lg:grid-cols-2 gap-5">
                         <Fade direction="left">
-                            <Input required type="text" name="stockStatus" label="Stock Status" defaultValue={`In stock , Made to Order`}></Input>
+                            <div className="w-full border flex items-center justify-between border-[#B0BEC5] px-3 py-2 rounded-lg">
+                            <label className="text-[#607D8B]" htmlFor="stockStatus">
+                            Stock Status :
+                            </label>
+                            <select className="bg-transparent" defaultValue={user.stockStatus} required name="stockStatus" id="stockStatus">
+                                <option value="In Stock">In Stock</option>
+                                <option value="Made to Order">Made to Order</option>
+                            </select>
+                            </div>
                         </Fade>
                         <Fade direction="right">
                             <Input type="text" name="userName" label="User Name" defaultValue={user.displayName} readOnly></Input>
