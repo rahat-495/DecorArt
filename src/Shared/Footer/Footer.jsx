@@ -40,7 +40,7 @@ const Footer = () => {
       <footer className="footer px-20 lg:px-64 py-4 border-t bg-base-200 text-base-content border-base-300">
         <aside className="items-center grid-flow-col">
           <p className="font-semibold text-lg gro">
-            DECOR ART Ltd. <br />© Decot Art Official 2024
+            DECOR ART  <br />Copyright © 2024 - All Right Reserved
           </p>
         </aside>
 
