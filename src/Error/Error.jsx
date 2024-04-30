@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center">
+        <div className="min-h-screen bg-white flex flex-col items-center justify-center">
             <h1 className="text-5xl md:text-6xl lg:text-8xl gro font-semibold ">Opps !!!</h1>
             <div className="">
                 <img className="w-2/3 h-2/3 mx-auto" src="https://img.freepik.com/free-vector/404-error-with-landscape-concept-illustration_114360-7898.jpg?w=996&t=st=1714321052~exp=1714321652~hmac=ce8c9f212b802f23ba72541a8c48540fe4997205ed48a673854ea363180b2403" alt="" />
