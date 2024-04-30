@@ -10,7 +10,7 @@ const CardsDetail = () => {
         <div className="w-[1440px] mx-auto">
             <div className="my-20 flex-col mt-[250px] px-10 min-h-[55vh] flex justify-between gap-5 lg:flex-row">
                 <div className="w-full lg:w-1/2 rounded-lg">
-                    <img data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" className="rounded-lg w-[26%] h-[20%] md:w-2/4 md:h-[400px] lg:w-4/5" src={data?.image} alt="" />
+                    <img data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" className="rounded-lg w-[26%] h-[20%] md:w-2/4 md:h-[410px] lg:w-4/5" src={data?.image} alt="" />
                 </div>
 
                 <div className="lg:w-1/2 ">
@@ -28,7 +28,9 @@ const CardsDetail = () => {
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500" > <span className="font-medium">Price : ${data.price}</span> </p>
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600" > <span className="font-medium flex gap-3 relative">Rating : {data.rating} <FaStar className="text-yellow-600 absolute left-[85px] top-[2px]"/></span> </p>
                         <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700" > <span className="font-medium">Processing Time : {data.processing} minute</span> </p>
-                        <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700" > <span className="font-medium">Stock-Status : {data.stockStatus}</span> </p>
+                        <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700" > <span className="font-medium">Stock Status : {data.stockStatus}</span> </p>
+                        <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700" > <span className="font-medium">Provider Name : {data.userName}</span> </p>
+                        <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="700" > <span className="font-medium">Provider Email : {data.userEmail}</span> </p>
                     </div>
                 </div>
             </div>
