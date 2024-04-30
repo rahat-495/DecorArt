@@ -14,6 +14,7 @@ import SubCategories from "../Pages/SubCategories/SubCategories";
 import AllArt from "../Pages/AllArt&Craft/AllArt";
 import MyLIst from "../Pages/MyList/MyLIst";
 import Update from "../Pages/Update/Update";
+import UpdateP from "../Private/UpdateP";
 
 const router = createBrowserRouter([
   {
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path : '/update/:id' ,
-        element : <Update></Update> ,
+        element : <UpdateP><Update></Update></UpdateP> ,
         loader : () => fetch(`http://localhost:5555/addCraftItem`)
       }
     ],
