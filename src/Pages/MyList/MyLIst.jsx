@@ -16,7 +16,7 @@ const MyLIst = () => {
 
     useEffect(() => {
         setLoading(true) ;
-        fetch(`http://localhost:5555/myList/${user?.email}`)
+        fetch(`https://assignment-10-server-sandy-one.vercel.app/myList/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setCards(data) ;
@@ -47,7 +47,7 @@ const MyLIst = () => {
             icon: "success"
           });
 
-          fetch(`http://localhost:5555/myListDelete/${id}` , {
+          fetch(`https://assignment-10-server-sandy-one.vercel.app/myListDelete/${id}` , {
             method : 'DELETE'
           })
           .then(res => res.json())

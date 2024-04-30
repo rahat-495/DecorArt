@@ -31,7 +31,7 @@ const AddCraft = () => {
         console.log(itemInfo);
 
         setLoading(true) ;
-        fetch(`http://localhost:5555/addCraftItem` , {
+        fetch(`https://assignment-10-server-sandy-one.vercel.app/addCraftItem` , {
             method : 'POST' ,
             headers : {
                 'content-type' : 'application/json'

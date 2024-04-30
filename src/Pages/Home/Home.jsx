@@ -12,7 +12,7 @@ const Home = () => {
 
     useEffect(() => {
         setLoading(true) ;
-        fetch(`http://localhost:5555/addCraftItem`)
+        fetch(`https://assignment-10-server-sandy-one.vercel.app/addCraftItem`)
         .then(res => res.json())
         .then(data => {
             console.log(data);

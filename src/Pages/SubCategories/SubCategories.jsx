@@ -13,7 +13,7 @@ const SubCategories = () => {
     
     useEffect(() => {
         setLoading(true) ;
-        fetch(`http://localhost:5555/subCategorie/${id}`)
+        fetch(`https://assignment-10-server-sandy-one.vercel.app/subCategorie/${id}`)
         .then(res => res.json())
         .then(data => {
           setLoadedData(data) ;

@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home> ,
-        loader : () => fetch(`http://localhost:5555/addCraftItem`) ,
+        loader : () => fetch(`https://assignment-10-server-sandy-one.vercel.app/addCraftItem`) ,
       },
       {
         path : '/login' ,
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path : '/cardsDetails/:id' ,
         element : <CardsDetailP><CardsDetail></CardsDetail></CardsDetailP> ,
-        loader : ({params}) => fetch(`http://localhost:5555/addCraftItem/${params.id}`)
+        loader : ({params}) => fetch(`https://assignment-10-server-sandy-one.vercel.app/addCraftItem/${params.id}`)
       },
       {
         path : '/subCategorie/:id' ,
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path : '/allArt' ,
         element : <AllArt></AllArt> ,
-        loader : () => fetch(`http://localhost:5555/addCraftItem`) ,
+        loader : () => fetch(`https://assignment-10-server-sandy-one.vercel.app/addCraftItem`) ,
       },
       {
         path : '/myList' ,
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path : '/update/:id' ,
         element : <UpdateP><Update></Update></UpdateP> ,
-        loader : () => fetch(`http://localhost:5555/addCraftItem`)
+        loader : () => fetch(`https://assignment-10-server-sandy-one.vercel.app/addCraftItem`)
       }
     ],
   },

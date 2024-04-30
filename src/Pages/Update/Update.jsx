@@ -42,7 +42,7 @@ const Update = () => {
       shortDesc,
     };
 
-    fetch(`http://localhost:5555/update/${id}`, {
+    fetch(`https://assignment-10-server-sandy-one.vercel.app/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
