@@ -78,7 +78,7 @@ const Register = () => {
 
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center`}>
-      <Card className="w-96 pt-11 shadow-none border">
+      <Card className="w-96 pt-11 shadow-none border my-20 lg:my-0">
         <CardHeader
           variant="gradient"
           color="gray"
@@ -121,7 +121,7 @@ const Register = () => {
             </div>
             <input
               type="submit"
-              className="w-full btn btn-outline hover:bg-[#343434]"
+              className="w-full btn text-gray-800 btn-outline hover:bg-[#7a7a7a]"
               value={"Register"}
             />
           </form>

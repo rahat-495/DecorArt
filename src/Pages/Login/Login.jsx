@@ -101,7 +101,7 @@ const Login = () => {
   
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center`}>
-      <Card className="w-96 pt-11 shadow-none border">
+      <Card className="w-96 pt-11 shadow-none border my-20 lg:my-0">
         
         <CardHeader
           variant="gradient"
@@ -138,7 +138,7 @@ const Login = () => {
                     remember || <p className="text-red-800 font-semibold">{errorText}</p>
                   }
                 </div>
-                <input type="submit" className="w-full btn btn-outline hover:bg-[#343434]" value={'Log In'} />
+                <input type="submit" className="w-full btn text-gray-800 btn-outline hover:bg-[#7a7a7a]" value={'Log In'} />
                 <div className="divider">OR</div>
                 <div className="w-full border border-[#343434] py-2 rounded-lg flex items-center justify-evenly">
                     <Button onClick={handleGoogleLogin} className="text-lg bg-transparent text-black border border-[#343434] hover:shadow-none"><FaGoogle /></Button>
